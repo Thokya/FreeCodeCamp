@@ -131,6 +131,122 @@ function confirmEnding(str, target) {
 console.log(confirmEnding("Bastian", "n"));
 console.log(confirmEnding("Congratulation", "on"));
 console.log(confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification"));
-console.log(console.log(confirmEnding("Open sesame", "same")));
+console.log(confirmEnding("Open sesame", "same"));
+//============================================================================================================================================
+
+// Repeat a String Repeat a String
+
+/*
+Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+*/
+
+function repeatStringNumTimes(str, num) {
+    // if (num <= 0) {
+    //     return "";
+    // } else {
+    //     return str + repeatStringNumTimes(str, num - 1);
+    // }
+
+    return (num <= 0) ? "" : str + repeatStringNumTimes(str, num - 1);
+}
+
+console.log(repeatStringNumTimes("abc", 3));
+console.log(repeatStringNumTimes("*", 3));
+console.log(repeatStringNumTimes("abc", 1));
+console.log(repeatStringNumTimes("abc", -2));
+console.log(repeatStringNumTimes("abc", 0));
+//============================================================================================================================================
+
+// Truncate a String
+
+/*
+Truncate a string (first argument) if it is longer than the given maximum string length (second argument). Return the truncated string with a ... ending.
+*/
+
+function truncateString(str, num) {
+    return (str.length > num) ? str.slice(0, num) + "..." : str;
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));
+console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", "A-tisket a-tasket A green and yellow basket".length + 2));
+//============================================================================================================================================
+
+// Finders Keepers
+
+/*
+Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
+*/
+
+// function findElement(arr, func) {
+//     return arr.find(func);
+// }
+
+function findElement(arr, func) {
+    let num = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (func(arr[i])) {
+            num = arr[i];
+            return num;
+        }
+    }
+    return undefined;
+}
+
+console.log(findElement([1, 2, 3, 4], num => num % 2 === 0));
+console.log(findElement([1, 3, 5, 8, 9, 10], function (num) { return num % 2 === 0; }));
+//============================================================================================================================================
+
+// Boo who
+
+/*
+Check if a value is classified as a boolean primitive. Return true or false.
+Boolean primitives are true and false.
+*/
+
+function booWho(bool) {
+    return (bool === true || bool === false) ? true : false;
+}
+
+console.log(booWho(null));
+console.log(booWho(true));
+console.log(booWho("true"));
+console.log(booWho(false));
+console.log(booWho("false"));
+//============================================================================================================================================
+
+// Title Case a Sentence
+
+/*
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+For the purpose of this exercise, you should also capitalize connecting words like "the" and "of".
+*/
+
+function titleCase(str) {
+    let wordArr = str.toLowerCase().split(' ');
+    let result = wordArr.map(val => val.replace(val.charAt(0), val.charAt(0).toUpperCase()));
+    return result.join(" ");
+}
+
+console.log(titleCase("I'm a little tea pot"));
+console.log(titleCase("sHoRt AnD sToUt"));
+console.log(titleCase("HERE IS MY HANDLE HERE IS MY SPOUT"));
+console.log(titleCase("abhishek more"));
+//============================================================================================================================================
+
+// Slice and Splice
+
+/*
+You are given two arrays and an index.
+Copy each element of the first array into the second array, in order.
+Begin inserting elements at index n of the second array.
+Return the resulting array. The input arrays should remain the same after the function runs.
+*/
+
+function frankenSplice(arr1, arr2, n) {
+    return arr2;
+}
+
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
 //============================================================================================================================================
 
