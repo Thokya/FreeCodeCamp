@@ -11,6 +11,7 @@ arr1.push(4);
 
 var arr2 = ["Stimpson", "J", "cat"];
 arr2.push(["happy", "joy"]);
+
 console.log(arr2);
 //-------------------------------------------------------------------------------------
 
@@ -22,6 +23,7 @@ Any type of entry can be "popped" off of an array - numbers, strings, even neste
 */
 var threeArr = [1, 4, 6];
 var oneDown = threeArr.pop();
+
 console.log(oneDown); // Returns 6
 console.log(threeArr); // Returns [1, 4]
 //-------------------------------------------------------------------------------------
@@ -33,6 +35,7 @@ That's where .shift() comes i
 */
 var ourArray = ["Stimpson", "J", ["cat"]];
 var removedFromOurArray = ourArray.shift();
+
 console.log(removedFromOurArray);
 //-------------------------------------------------------------------------------------
 
@@ -44,6 +47,7 @@ Not only can you shift elements off of the beginning of an array, you can also u
 var ourArray = ["Stimpson", "J", "cat"];
 ourArray.shift(); // ourArray now equals ["J", "cat"]
 ourArray.unshift("Happy");
+
 console.log(ourArray);
 //=====================================================================================
 
@@ -272,8 +276,10 @@ var myObj = {
     prop1: "val1",
     prop2: "val2"
 };
+
 var prop1val = myObj.prop1;
 console.log(prop1val);
+
 var prop2val = myObj.prop2;
 console.log(prop2val);
 //------------------------------------------------------------------------------------------------------------------------------------------
@@ -289,6 +295,7 @@ var myObj = {
     "More Space": "Spock",
     "NoSpace": "USS Enterprise"
 };
+
 console.log(myObj["Space Name"]);
 console.log(myObj['More Space']);
 console.log(myObj["NoSpace"]);
@@ -308,6 +315,7 @@ var dogs = {
 };
 var myDog = "Hunter";
 var myBreed = dogs[myDog];
+
 console.log(myBreed);
 
 /*
@@ -324,6 +332,7 @@ function propPrefix(str) {
 }
 
 var someProp = propPrefix("Name");
+
 console.log(someObj[someProp]);
 //------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -361,6 +370,7 @@ var ourDog = {
 };
 
 ourDog.bark = "bow-wow";
+
 console.log(ourDog);
 //------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -407,6 +417,7 @@ console.log(alpha[2]);
 console.log(alpha[24]);
 
 var value = 4;
+
 console.log(alpha[value]);
 //----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -423,6 +434,7 @@ function phoneticLookup(val) {
         "foxtrot": "Frank"
     }
     result = lookup[val]
+    
     return result;
 }
 
@@ -515,6 +527,7 @@ var myPlants = [
 // Only change code below this line
 
 var secondTree = myPlants[1].list[1]; // Change this line
+
 console.log(secondTree);
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -525,6 +538,7 @@ The next type of loop you will learn is called a do...while loop. It is called a
 
 var ourArray = [];
 var i = 0;
+
 do {
     ourArray.push(i);
     i++;
@@ -538,6 +552,7 @@ The example above behaves similar to other types of loops, and the resulting arr
 
 var ourArray = [];
 var i = 5;
+
 while (i < 5) {
     ourArray.push(i);
     i++;
@@ -551,6 +566,7 @@ In this example, we initialize the value of ourArray to an empty array and the v
 
 var ourArray = [];
 var i = 5;
+
 do {
     ourArray.push(i);
     i++;
@@ -570,9 +586,11 @@ Recursion is the concept that a function can be expressed in terms of itself. To
 
 function multiply(arr, n) {
     var product = 1;
+    
     for (var i = 0; i < n; i++) {
         product *= arr[i];
     }
+    
     return product;
 }
 
@@ -653,8 +671,8 @@ function lookUpProfile(name, prop) {
             }
         }
     }
+    
     return "No such contact";
-
 }
 
 console.log(lookUpProfile("Akira", "likes"));
@@ -678,6 +696,7 @@ function randomRange(myMin, myMax) {
 }
 
 let result = randomRange(45, 79);
+
 console.log(result);
 //---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -784,6 +803,7 @@ function countup(n) {
     } else {
         const countArray = countup(n - 1);
         countArray.push(n);
+        
         return countArray;
     }
 }
@@ -800,6 +820,7 @@ function countdown(n) {
     } else {
         const countArray = countdown(n - 1);
         countArray.unshift(n);
+        
         return countArray;
     }
 }
@@ -816,6 +837,7 @@ function rangeOfNumbers(startNum, endNum) {
     } else {
         let countArray = rangeOfNumbers(startNum, endNum - 1);
         countArray.push(endNum);
+        
         return countArray;
     }
 };
